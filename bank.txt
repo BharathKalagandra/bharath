@@ -1,0 +1,159 @@
+
+
+Customer:
+
+CustomerID (Primary Key)
+First Name
+Last Name
+Date of Birth
+Gender
+National ID/Passport Number
+Contact Information (Phone, Email)
+Address (Street, City, State, Zip Code)
+
+
+Account:
+
+Account Number (Primary Key)
+CustomerID (Foreign Key referencing Customer)
+Account Type (Savings, Checking, etc.)
+Balance
+Date Opened
+Status (Active, Closed, Frozen)
+
+
+Transaction:
+
+Transaction ID (Primary Key)
+Account Number (Foreign Key referencing Account)
+Transaction Type (Deposit, Withdrawal, Transfer, etc.)
+Amount
+Transaction Date
+Description
+
+
+Employment Information:
+
+CustomerID (Foreign Key referencing Customer)
+Employer Name
+Employment Type (Full-time, Part-time, Self-employed)
+Income
+Job Title
+
+
+KYC (Know Your Customer):
+
+CustomerID (Foreign Key referencing Customer)
+KYC Documents (ID Proof, Address Proof, etc.)
+KYC Status (Verified, Pending, Rejected)
+
+
+Credit Score:
+
+CustomerID (Foreign Key referencing Customer)
+Score
+Last Updated Date
+
+
+Loan Application:
+
+Application ID (Primary Key)
+Customer ID (Foreign Key referencing Customer)
+Application Date
+Loan Amount Requested
+Purpose of Loan
+Status (Pending, Approved, Rejected)
+Rejection Reason (if applicable)
+
+
+Loan Details:
+
+Loan ID (Primary Key)
+Application ID (Foreign Key referencing Loan Application)
+Loan Type (Personal Loan, Mortgage, Auto Loan, etc.)
+Loan Amount Approved
+Interest Rate
+Term (in months)
+Disbursement Date
+Repayment Start Date
+
+
+Repayment Schedule:
+
+Schedule ID (Primary Key)
+Loan ID (Foreign Key referencing Loan Details)
+Installment Number
+Due Date
+Principal Amount
+Interest Amount
+Total Payment Amount
+Payment Status (Paid, Unpaid, Late, etc.)
+
+
+Loan Transactions:
+
+Transaction ID (Primary Key)
+Loan ID (Foreign Key referencing Loan Details)
+Transaction Type (Payment, Fee, Interest, etc.)
+Transaction Date
+Amount
+
+
+Collateral Details (if applicable):
+
+Collateral ID (Primary Key)
+Loan ID (Foreign Key referencing Loan Details)
+Collateral Type
+Collateral Value
+
+
+Loan Officer:
+
+Loan Officer ID (Primary Key)
+Loan ID (Foreign Key referencing Loan Details)
+Officer Name
+Approval Date
+Comments
+
+
+Loan Status History:
+
+Status ID (Primary Key)
+Loan ID (Foreign Key referencing Loan Details)
+Status
+Date
+Comments
+
+
+Insurance Details (if applicable):
+
+Insurance ID (Primary Key)
+Loan ID (Foreign Key referencing Loan Details)
+Insurance Type
+Coverage Amount
+Premium Amount
+
+
+Late Payment and Penalties:
+
+Penalty ID (Primary Key)
+Loan ID (Foreign Key referencing Loan Details)
+Installment Number
+Penalty Amount
+Date Assessed
+
+
+Loan Documents:
+
+Document ID (Primary Key)
+Loan ID (Foreign Key referencing Loan Details)
+Document Type (e.g., Agreement, Promissory Note)
+Document Path (location of stored document)
+
+
+Credit Score (at the time of loan application):
+
+Credit Score ID (Primary Key)
+Customer ID (Foreign Key referencing Customer)
+Score
+Date Checked
