@@ -1,3 +1,7 @@
 hello every one !!! bye
 
+<<<<<<< HEAD
+good morning to all of you
+=======
 good morning to all of you!
+>>>>>>> child
